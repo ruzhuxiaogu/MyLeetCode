@@ -1,0 +1,45 @@
+adapter
+1.CollectionAdapter  收藏列表的Adapter
+2.RecentlyVisitAdapter 最近来访列表的Adapter
+3.SelectAreaAdapter  选择地区的Adapter
+
+chuangyitest
+1.AboutChuangyiActivity.java - activity_aboutchuangyi.xml  设置 ->关于创易
+2.ServiceActivity.java - activity_service.xml 设置->服务协议
+3.FeedBackActivity.java - activity_feedback.xml 设置->意见反馈
+4.SetupActivity.java - activity_setup.xml 设置界面，里面的隐私权限，清理缓存，版本更新是空的。
+5.SelfFuncActivity.java - activity_selffunc.xml 用户功能主界面，其中的发布动态，团队列表，项目列表没做。
+6.CreateTeamActivity.java - activity_createteam.xml 创建团队界面
+7.CollectionActivity.java -activity_collection.xml 收藏界面
+8.RecentlyVisitActivity.java -activity_recentlyvisit.xml 最近来访界面
+9.EditDataActivity.java -activity_editdata.xml 编辑资料界面
+10.SelfInformationFragment.java - fragment_selfinformation.xml 编辑资料界面中的个人信息模块
+11.ExperienceFragment.java -fragment_experience.xml 编辑资料中的经历背景模块
+12.RealNameFragment.java -fragment_realname.xml 编辑资料中的实名认证模块
+13.AreaListItem.java 地区的一个类
+14.DBManager.java 读取地区数据库的类。地区数据库名为city.s3db
+15.MainActivity.java 建立项目的时候带的，与创易无关。
+
+
+app-src-main-res-raw-city.s3db 地区的数据库
+
+
+class Solution {
+public:
+    vector<int> vec;
+    bool isHappy(int n) {
+       if(n==1) return true;
+       vector<int>::iterator it=find(vec.begin(),vec.end(),n);
+       if(it==vec.end()){
+           int total=0;
+           while(n){
+               total+=(n%10)*(n%10);
+               n/=10;
+           }
+           vec.push_back(total);
+           return isHappy(total);
+       }else{
+           return false;
+       }
+    }
+};

@@ -1,5 +1,10 @@
 class Solution {
+//拓扑排序
+//1.选择一个入度为0的点并输出
+//2.从网中删除此顶点及所有出边
+//循环结束后，如输出的顶点数小于网中的顶点数，则输出有回路的信息，否则输出的顶点序列就是一个拓扑序列。
 public:
+
     vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
         vector<int> res;
         vector<vector<int>> graph(numCourses, vector<int>(0));
